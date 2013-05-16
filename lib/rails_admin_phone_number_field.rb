@@ -28,7 +28,7 @@ module RailsAdmin
           register_instance_option :formatted_value do
             formattable = value
             if formattable
-              formattable.phony_formatted(:format => number_format, :spaces => '.')
+              formattable.phony_formatted(:format => number_format, :spaces => '.') rescue formattable
             else
               "".html_safe
             end
